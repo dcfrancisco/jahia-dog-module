@@ -1,2 +1,8 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<dnt = 'http://www.mydog.org/jahia/nt/1.0'>
+<dmix = 'http://www.mydog.org/jahia/mix/1.0'>
+
+
+[dnt:dog] > jnt:content, jmix:droppableContent
+ - name (string) mandatory
