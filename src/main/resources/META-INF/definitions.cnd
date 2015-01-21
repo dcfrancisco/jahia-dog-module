@@ -3,5 +3,7 @@
 <dnt = 'http://www.mydog.org/jahia/nt/1.0'>
 <dmix = 'http://www.mydog.org/jahia/mix/1.0'>
 
-[dnt:dog] > jnt:content, jmix:structuredContent
+[dmix:dogContent] > jmix:droppableContent mixin
+
+[dnt:dog] > jnt:content, dmix:dogContent
  - name (string) mandatory
