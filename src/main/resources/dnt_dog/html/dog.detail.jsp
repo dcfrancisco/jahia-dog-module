@@ -15,7 +15,8 @@
 <template:addResources type="css" resources="dog.css"/>
 
 
-<table class="table table-bordered">
+<div class="container">
+<table class="table table-bordered dog-detail-container">
 	<tr>
 		<td colspan="2">
 			<h2>${currentNode.properties.name.string}</h2>
@@ -23,7 +24,7 @@
 	</tr>
 	<tr>
 		<td rowspan="3">
-			<img src="${currentNode.properties.photo.node.url}" title="${currentNode.properties.name.string}" width="100"/>
+			<img src="${currentNode.properties.photo.node.url}" title="${currentNode.properties.name.string}" width="200"/>
 		</td>	
 		<td>
 			<fmt:message key="dnt_dog.breed"/>: ${currentNode.properties.breed.string}
@@ -46,7 +47,4 @@
 		</td>
 	</tr>
 </table>
-
-
-<div>
 </div>

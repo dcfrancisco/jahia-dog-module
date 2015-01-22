@@ -13,4 +13,8 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<h2>${currentNode.properties.name.string}</h2>
+<h2>${currentNode.properties.name.string} 
+	<small>
+		<a href="<c:url value="${currentNode.url}"/>"><fmt:message key="lang.detail"/></a>
+	</small>
+</h2>

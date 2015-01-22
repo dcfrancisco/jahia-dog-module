@@ -1,3 +1,7 @@
 .dog-bio {
 	text-align: justify;
 }
+
+.dog-detail-container {
+	width: 200px;
+}
