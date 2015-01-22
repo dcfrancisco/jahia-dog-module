@@ -18,3 +18,15 @@
 
 [dnt:dogHouse] > jnt:content, dmix:dogContent
  - dogs (weakreference, choicelist[nodes='$currentSite//*;dnt:dog']) multiple
+ 
+[dnt:latestDogs] > jnt:content, dmix:dogContent, jmix:list
+
+
+
+
+
+
+
+
+
+
