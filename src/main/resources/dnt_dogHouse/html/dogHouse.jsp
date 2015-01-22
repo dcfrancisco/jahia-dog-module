@@ -18,29 +18,11 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-
-<%--boundComponent is the node which you are linked with--%>
-<c:set var="boundDog" value="${ui:getBindedComponent(currentNode, renderContext, 'j:bindedComponent')}"/>
 <div class="container">
-<c:if test="${jcr:isNodeType(boundDog, 'dnt:dog')}">
-	Tree of <template:module node="${boundDog}" view="hidden.name"/>
+	<c:set value="${currentNode.properties.dogs}" var="houseDogs"/>
 	
-	<c:set value="${boundDog.properties.father.node}" var="dogFather"/>
-	<c:if test="${not empty dogFather}">
-		<span>&gt; 
-			<template:module node="${dogFather}" view="detail"/>
-		</span>
-		
-		<c:set var ="dogFather" value="${dogFather.properties.father.node}" />
-		
-		<c:forEach var="i" begin="1" end="5">
-			<c:if test="${not empty dogFather}">
-				<span>&gt; 
-					<template:module node="${dogFather}" view="detail"/>
-				</span>
-			</c:if>
-			<c:set var ="dogFather" value="${dogFather.properties.father.node}" />
-		</c:forEach>
-	</c:if>
-</c:if>
+	<c:forEach items="${houseDogs}" var="dog">
+		<template:module node="${dog.node}" view="default"/>
+	</c:forEach>
+	
 </div>

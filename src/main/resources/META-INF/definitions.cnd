@@ -15,3 +15,6 @@
  - birthday (date)
  
 [dnt:dogFamilyTree] > jnt:content, jmix:bindedComponent, dmix:dogContent
+
+[dnt:dogHouse] > jnt:content, dmix:dogContent
+ - dogs (weakreference, choicelist[nodes='$currentSite//*;dnt:dog']) multiple
