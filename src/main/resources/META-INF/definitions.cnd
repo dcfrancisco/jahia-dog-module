@@ -13,3 +13,5 @@
  - origin (string, choicelist[country])
  - father (weakreference, choicelist[nodes='$currentSite//*;dnt:dog'])
  - birthday (date)
+ 
+[dnt:dogFamilyTree] > jnt:content, jmix:bindedComponent, dmix:dogContent

@@ -16,35 +16,11 @@
 
 
 <div class="container">
-<table class="table table-bordered dog-detail-container">
-	<tr>
-		<td colspan="2">
-			<h2>${currentNode.properties.name.string}</h2>
-		</td>
-	</tr>
-	<tr>
-		<td rowspan="3">
-			<img src="${currentNode.properties.photo.node.url}" title="${currentNode.properties.name.string}" width="200"/>
-		</td>	
-		<td>
-			<fmt:message key="dnt_dog.breed"/>: ${currentNode.properties.breed.string}
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<fmt:message key="dnt_dog.birthday"/>: 
-			<fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthday.time}"/>
-		</td>
-	</tr>
-	<tr>
-		<td>
-			<fmt:message key="dnt_dog.origin"/>: ${currentNode.properties.origin.string}
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			<p class="dog-bio">${currentNode.properties.bio.string}</p>
-		</td>
-	</tr>
-</table>
+	<h2>${currentNode.properties.name.string}</h2>
+	<p><img src="${currentNode.properties.photo.node.url}" title="${currentNode.properties.name.string}" width="200"/></p>
+	<p><fmt:message key="dnt_dog.breed"/>: ${currentNode.properties.breed.string}</p>
+	<p><fmt:message key="dnt_dog.birthday"/>: 
+	<fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthday.time}"/></p>
+	<p><fmt:message key="dnt_dog.origin"/>: ${currentNode.properties.origin.string}</p>
+	<p class="dog-bio">${currentNode.properties.bio.string}</p>
 </div>

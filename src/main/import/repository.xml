@@ -22,6 +22,9 @@
                                  jcr:title="dogDetail"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
                             <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
+                            <dogfamilytree j:view="default"
+                                 jcr:mixinTypes="jmix:renderable"
+                                 jcr:primaryType="dnt:dogFamilyTree"/>
                             <retour jcr:primaryType="jnt:backToParentPage">
                                 <j:translation_fr jcr:language="fr"
                                        jcr:primaryType="jnt:translation"
