@@ -18,16 +18,16 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
-<c:set var="latestDogsStatement" value="select * from [dnt:dog] as dogs order by [jcr:created] desc"/>
-<query:definition var="listQuery" statement="${latestDogsStatement}" limit="6"/>
-
-<c:set target="${moduleMap}" property="editable" value="false" />
-<c:set target="${moduleMap}" property="emptyListMessage">
-	<fmt:message key="label.noDogFound"/>
-</c:set>
-<c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
-<c:set target="${moduleMap}" property="subNodesView" value="hidden.detail2" />
-
-<h2><fmt:message key="title.listOfLastDogs"/></h2>
-
-
+<template:tokenizedForm>
+<form action="${renderContext.site.path}/contents/dogs/*" method="post">
+	<input type="hidden" name="jcrMethodToCall" value="post"/>
+	<input type="hidden" name="jcrNodeType" value="dnt:dog"/>
+	<input type="hidden" name="jcrRedirectTo" value="${url.base}${renderContext.mainResource.node.path}"/>
+	
+	<input type="text" name="name"/>
+	<input type="date" name="birthday"/>
+	
+	<input type="reset" class="btn btn-default" value="<fmt:message key="button.label.reset"/>"/>
+	<input type="submit" class="btn btn-default" value="<fmt:message key="button.label.submit"/>"/>
+</form>
+</template:tokenizedForm>

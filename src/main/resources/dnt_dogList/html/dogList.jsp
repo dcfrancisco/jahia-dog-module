@@ -20,6 +20,7 @@
 
 <template:addResources type="javascript" resources="jquery.min.js"/>
 
+
 <div class="container" id="bcListDogs" style="width:auto;">
 	<h2><fmt:message key="title.dogsGetWithAjax"/></h2>
 	
@@ -48,6 +49,7 @@
 	var request = $.ajax({
 		url: url,
 		type: "GET",
+		cache: false,
 		dataType: "json",
 		data: {query: query}
 	});

@@ -23,6 +23,8 @@
 
 [dnt:dogList] > jnt:content, dmix:dogContent, jmix:list
 
+[dnt:dogForm] > jnt:content, dmix:dogContent
+
 
 
 

@@ -13,7 +13,7 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="dog.css"/>
-
+<template:addResources type="javascript" resources="jquery.min.js"/>
 
 <div class="container">
 	<h2>${currentNode.properties.name.string}</h2>
@@ -23,4 +23,22 @@
 	<fmt:formatDate type="date" dateStyle="medium" value="${currentNode.properties.birthday.time}"/></p>
 	<p><fmt:message key="dnt_dog.origin"/>: ${currentNode.properties.origin.string}</p>
 	<p class="dog-bio">${currentNode.properties.bio.string}</p>
+	
+	<input type="button" class="btn btn-default" value="Bark" id="btnBark"/>
 </div>
+
+
+<script type="text/javascript">
+	
+$('#btnBark').click(function() {
+	console.info("inside function");
+	var url = "${currentNode.path}.bark.do";
+	
+	$.ajax({
+		url: url,
+		type: "POST"
+	});
+	
+});
+
+</script>

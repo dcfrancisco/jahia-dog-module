@@ -18,6 +18,7 @@
                        j:hiddenTemplate="false"
                        jcr:primaryType="jnt:contentTemplate">
                         <j:translation_fr jcr:language="fr"
+                                 jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="dogDetail"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
@@ -27,6 +28,7 @@
                                  jcr:primaryType="dnt:dogFamilyTree"/>
                             <retour jcr:primaryType="jnt:backToParentPage">
                                 <j:translation_fr jcr:language="fr"
+                                       jcr:mixinTypes="mix:title"
                                        jcr:primaryType="jnt:translation"
                                        jcr:title="Retour"/>
                             </retour>
