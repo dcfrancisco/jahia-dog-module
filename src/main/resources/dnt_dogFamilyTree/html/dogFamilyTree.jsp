@@ -31,15 +31,14 @@
 			<template:module node="${dogFather}" view="detail"/>
 		</span>
 		
-		<c:set var ="dogFather" value="${dogFather.properties.father.node}" />
 		
 		<c:forEach var="i" begin="1" end="5">
+			<c:set var ="dogFather" value="${dogFather.properties.father.node}" />
 			<c:if test="${not empty dogFather}">
 				<span>&gt; 
 					<template:module node="${dogFather}" view="detail"/>
 				</span>
 			</c:if>
-			<c:set var ="dogFather" value="${dogFather.properties.father.node}" />
 		</c:forEach>
 	</c:if>
 </c:if>

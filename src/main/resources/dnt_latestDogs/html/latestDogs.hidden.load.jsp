@@ -28,6 +28,6 @@
 <c:set target="${moduleMap}" property="listQuery" value="${listQuery}" />
 <c:set target="${moduleMap}" property="subNodesView" value="hidden.detail2" />
 
-<h2><fmt:message key="label.listOfLastDogs"/></h2>
+<h2><fmt:message key="title.listOfLastDogs"/></h2>
 
 

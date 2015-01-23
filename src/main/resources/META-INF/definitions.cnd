@@ -21,6 +21,8 @@
  
 [dnt:latestDogs] > jnt:content, dmix:dogContent, jmix:list
 
+[dnt:dogList] > jnt:content, dmix:dogContent, jmix:list
+
 
 
 
