@@ -18,11 +18,12 @@
 <%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
+<c:if test="${renderContext.loggedIn}">
 <template:tokenizedForm>
-<form action="${renderContext.site.path}/contents/dogs/*" method="post">
+<form action="${url.base}${renderContext.site.path}/contents/dogs/*" method="post">
 	<input type="hidden" name="jcrMethodToCall" value="post"/>
 	<input type="hidden" name="jcrNodeType" value="dnt:dog"/>
-	<input type="hidden" name="jcrRedirectTo" value="${url.base}${renderContext.mainResource.node.path}"/>
+	
 	
 	<input type="text" name="name"/>
 	<input type="date" name="birthday"/>
@@ -31,3 +32,10 @@
 	<input type="submit" class="btn btn-default" value="<fmt:message key="button.label.submit"/>"/>
 </form>
 </template:tokenizedForm>
+</c:if>
+
+<c:if test="${not renderContext.loggedIn}">
+	<h3>You must log in to add some dogs.</h3>
+</c:if>
+
+

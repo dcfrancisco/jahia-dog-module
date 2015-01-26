@@ -15,6 +15,6 @@
 
 <h2>${currentNode.properties.name.string} 
 	<small>
-	<a href="<c:url value="${currentNode.url}"/>"><fmt:message key="lang.detail"/></a>
+	<a href="<c:url value="${base.url}${currentNode.url}"/>"><fmt:message key="lang.detail"/></a>
 	</small>
 </h2>

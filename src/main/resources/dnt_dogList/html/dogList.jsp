@@ -41,9 +41,15 @@
 	
 </div>
 
-
 <script type="text/javascript">
-	var url = "/cms/find/default/fr";
+
+$(document).ready(function(){
+
+	var urlbase = "${url.base}";
+	var urlContent = urlbase.split('/');
+	var mode = urlContent[3], lang = urlContent[4];
+	var url = "/cms/find/"+mode+"/"+lang;
+	
 	var query = "select * from [dnt:dog]";
 	
 	var request = $.ajax({
@@ -68,7 +74,11 @@
 		$.each(data, function(i, row) {
 			html += '<tr>';
 			html += '<td>' + (i+1) + '</td>';
-			html += '<td><img src="' + row['node']['photo'] + '" width="40"/>' + '</td>';
+			html += '<td>'; 
+			if (row['node']['photo']) {
+				html += '<img src="' + row['node']['photo'] + '" width="40"/>';
+			}
+			html += '</td>';
 			html += '<td><a href="' + row['node']['path'] + '.html">' + row['dnt:dog.name'] + '</a></td>';
 			html += '<td>' + row['dnt:dog.origin'] + '</td>';
 			html += '<td>' + row['dnt:dog.breed'] + '</td>';
@@ -76,6 +86,7 @@
 		});
 		$(html).appendTo('#tbListDogs tbody');
 	}
+});
 </script>
 
 

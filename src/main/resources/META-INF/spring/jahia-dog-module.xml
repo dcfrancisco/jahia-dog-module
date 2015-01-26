@@ -3,8 +3,9 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     
-    <bean id="BarkAction" class="fr.smile.dogs.actions.BarkAction">
+    <bean class="fr.smile.dogs.actions.BarkAction">
     	<property name="name" value="bark"/>
+    	<property name="requiredPermission" value="bark"/>
     </bean>
     
 </beans>

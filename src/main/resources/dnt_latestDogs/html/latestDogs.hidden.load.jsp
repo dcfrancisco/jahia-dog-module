@@ -19,7 +19,7 @@
 <%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 
 <c:set var="latestDogsStatement" value="select * from [dnt:dog] as dogs order by [jcr:created] desc"/>
-<query:definition var="listQuery" statement="${latestDogsStatement}" limit="6"/>
+<query:definition var="listQuery" statement="${latestDogsStatement}" limit="100"/>
 
 <c:set target="${moduleMap}" property="editable" value="false" />
 <c:set target="${moduleMap}" property="emptyListMessage">

@@ -13,27 +13,35 @@
                 <templates j:rootTemplatePath="/base" jcr:primaryType="jnt:templatesFolder">
                     <files jcr:primaryType="jnt:folder"/>
                     <contents jcr:primaryType="jnt:contentFolder"/>
-                    <dogdetail j:applyOn="dnt:dog"
-                       j:defaultTemplate="true"
-                       j:hiddenTemplate="false"
-                       jcr:primaryType="jnt:contentTemplate">
-                        <j:translation_fr jcr:language="fr"
+                    <dog-content-template j:applyOn="dnt:dog"
+                                  j:defaultTemplate="true"
+                                  j:hiddenTemplate="false"
+                                  jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_en jcr:language="en"
                                  jcr:mixinTypes="mix:title"
                                  jcr:primaryType="jnt:translation"
-                                 jcr:title="dogDetail"/>
+                                 jcr:title="dog-content-template"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
                             <main-resource-display j:mainResourceView="detail" jcr:primaryType="jnt:mainResourceDisplay"/>
-                            <dogfamilytree j:view="default"
-                                 jcr:mixinTypes="jmix:renderable"
-                                 jcr:primaryType="dnt:dogFamilyTree"/>
-                            <retour jcr:primaryType="jnt:backToParentPage">
-                                <j:translation_fr jcr:language="fr"
-                                       jcr:mixinTypes="mix:title"
-                                       jcr:primaryType="jnt:translation"
-                                       jcr:title="Retour"/>
-                            </retour>
+                            <j:translation_en jcr:language="en"
+                                    jcr:mixinTypes="mix:title"
+                                    jcr:primaryType="jnt:translation"
+                                    jcr:title="Dog detail"/>
                         </pagecontent>
-                    </dogdetail>
+                    </dog-content-template>
+                    <dog-add-form j:applyOn="dnt:dogForm"
+                          j:defaultTemplate="true"
+                          j:hiddenTemplate="false"
+                          jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="dog-add-form"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <main-resource-display j:mainResourceView="addSimple"
+                                         jcr:primaryType="jnt:mainResourceDisplay"/>
+                        </pagecontent>
+                    </dog-add-form>
                 </templates>
                 
             </jahia-dog-module>

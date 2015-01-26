@@ -24,14 +24,17 @@
 	<p><fmt:message key="dnt_dog.origin"/>: ${currentNode.properties.origin.string}</p>
 	<p class="dog-bio">${currentNode.properties.bio.string}</p>
 	
-	<input type="button" class="btn btn-default" value="Bark" id="btnBark"/>
+	<c:if test="${jcr:hasPermission(currentNode,'bark')}">
+	    <!--The user is allowed-->
+		<input type="button" class="btn btn-default" value="Bark" id="btnBark"/>
+	</c:if>
+
 </div>
 
 
 <script type="text/javascript">
 	
 $('#btnBark').click(function() {
-	console.info("inside function");
 	var url = "${currentNode.path}.bark.do";
 	
 	$.ajax({
