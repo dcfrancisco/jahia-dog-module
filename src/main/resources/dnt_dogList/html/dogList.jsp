@@ -20,7 +20,6 @@
 
 <template:addResources type="javascript" resources="jquery.min.js"/>
 
-
 <div class="container" id="bcListDogs" style="width:auto;">
 	<h2><fmt:message key="title.dogsGetWithAjax"/></h2>
 	
@@ -41,14 +40,15 @@
 	
 </div>
 
+
 <script type="text/javascript">
 
 $(document).ready(function(){
 
-	var urlbase = "${url.base}";
-	var urlContent = urlbase.split('/');
-	var mode = urlContent[3], lang = urlContent[4];
-	var url = "/cms/find/"+mode+"/"+lang;
+	var url = "${url.find}";
+	//var urlContent = urlbase.split('/');
+	//var mode = urlContent[3], lang = urlContent[4];
+	//var url = "/cms/find/"+mode+"/"+lang;
 	
 	var query = "select * from [dnt:dog]";
 	

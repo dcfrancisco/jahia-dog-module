@@ -7,5 +7,12 @@
     	<property name="name" value="bark"/>
     	<property name="requiredPermission" value="bark"/>
     </bean>
+
+    <bean class="fr.smile.dogs.render.filter.LastViewedFilter">
+        <property name="priority" value="10"/>
+        <property name="applyOnNodeTypes" value="dnt:dog"/>
+        <property name="applyOnModes" value="live,preview"/>
+        <property name="applyOnMainResource" value="true"/>
+    </bean>
     
 </beans>

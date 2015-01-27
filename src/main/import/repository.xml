@@ -38,10 +38,39 @@
                                  jcr:primaryType="jnt:translation"
                                  jcr:title="dog-add-form"/>
                         <pagecontent jcr:primaryType="jnt:contentList">
-                            <main-resource-display j:mainResourceView="addSimple"
+                            <main-resource-display j:invertCondition="false"
+                                         j:mainResourceView="addSimple"
+                                         j:requireLoggedUser="false"
+                                         j:requirePrivilegedUser="false"
+                                         j:requiredPermissionNames="bark"
+                                         jcr:mixinTypes="jmix:requiredPermissions"
                                          jcr:primaryType="jnt:mainResourceDisplay"/>
                         </pagecontent>
                     </dog-add-form>
+                    <dog-content-wpermission j:applyOn="dnt:dog"
+                                     j:defaultTemplate="false"
+                                     j:hiddenTemplate="false"
+                                     j:invertCondition="false"
+                                     j:requireLoggedUser="false"
+                                     j:requirePrivilegedUser="false"
+                                     j:requiredPermissionNames="bark"
+                                     jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_en jcr:language="en"
+                                 jcr:mixinTypes="mix:title"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="dog-content-wPermission"/>
+                    </dog-content-wpermission>
+                    <latest-viewed-dogs-filter j:applyOn="dnt:latestViewedDogs"
+                                       j:defaultTemplate="true"
+                                       j:hiddenTemplate="false"
+                                       jcr:primaryType="jnt:contentTemplate">
+                        <j:translation_fr jcr:language="fr"
+                                 jcr:primaryType="jnt:translation"
+                                 jcr:title="latest viewed dogs filter"/>
+                        <pagecontent jcr:primaryType="jnt:contentList">
+                            <main-resource-display jcr:primaryType="jnt:mainResourceDisplay"/>
+                        </pagecontent>
+                    </latest-viewed-dogs-filter>
                 </templates>
                 
             </jahia-dog-module>

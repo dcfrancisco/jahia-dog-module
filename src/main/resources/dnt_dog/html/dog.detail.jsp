@@ -4,16 +4,9 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="jcr" uri="http://www.jahia.org/tags/jcr" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%--@elvariable id="currentNode" type="org.jahia.services.content.JCRNodeWrapper"--%>
-<%--@elvariable id="out" type="java.io.PrintWriter"--%>
-<%--@elvariable id="script" type="org.jahia.services.render.scripting.Script"--%>
-<%--@elvariable id="scriptInfo" type="java.lang.String"--%>
-<%--@elvariable id="workspace" type="java.lang.String"--%>
-<%--@elvariable id="renderContext" type="org.jahia.services.render.RenderContext"--%>
-<%--@elvariable id="currentResource" type="org.jahia.services.render.Resource"--%>
-<%--@elvariable id="url" type="org.jahia.services.render.URLGenerator"--%>
 <template:addResources type="css" resources="dog.css"/>
 <template:addResources type="javascript" resources="jquery.min.js"/>
+
 
 <div class="container">
 	<h2>${currentNode.properties.name.string}</h2>
@@ -32,16 +25,17 @@
 </div>
 
 
-<script type="text/javascript">
-	
-$('#btnBark').click(function() {
-	var url = "${currentNode.path}.bark.do";
-	
-	$.ajax({
-		url: url,
-		type: "POST"
-	});
-	
-});
 
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#btnBark').click(function() {
+			var url = "${currentNode.path}.bark.do";
+
+			$.ajax({
+				url: url,
+				type: "POST"
+			});
+
+		});
+	});
 </script>

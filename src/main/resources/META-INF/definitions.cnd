@@ -1,5 +1,6 @@
 <jnt = 'http://www.jahia.org/jahia/nt/1.0'>
 <jmix = 'http://www.jahia.org/jahia/mix/1.0'>
+<mix = 'http://www.jcp.org/jcr/mix/1.0'>
 <dnt = 'http://www.mydog.org/jahia/nt/1.0'>
 <dmix = 'http://www.mydog.org/jahia/mix/1.0'>
 
@@ -24,6 +25,10 @@
 [dnt:dogList] > jnt:content, dmix:dogContent, jmix:list
 
 [dnt:dogForm] > jnt:content, dmix:dogContent
+
+[dnt:latestViewedDogs] > jnt:content, dmix:dogContent, mix:title,  jmix:list
+ - maxDogs (long) = 3 mandatory
+ - dogsView (string, choicelist[templates=dnt:dog, resourceBundle])
 
 
 
